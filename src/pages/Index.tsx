@@ -28,18 +28,18 @@ const Index = () => {
   const [cart, setCart] = useState<number[]>([]);
 
   const products: Product[] = [
-    { id: 1, name: 'Беспроводные наушники', price: 5990, category: 'Электроника', image: 'https://cdn.poehali.dev/projects/7a496644-9924-4fde-a35f-d4c474eaf0be/files/27f97501-4b48-48c4-a6da-5eb784d973ff.jpg', rating: 5 },
-    { id: 2, name: 'Умные часы', price: 12990, category: 'Электроника', image: 'https://cdn.poehali.dev/projects/7a496644-9924-4fde-a35f-d4c474eaf0be/files/92f50072-b016-4bf0-8692-366063267f68.jpg', rating: 4 },
-    { id: 3, name: 'Рюкзак для ноутбука', price: 3490, category: 'Аксессуары', image: 'https://cdn.poehali.dev/projects/7a496644-9924-4fde-a35f-d4c474eaf0be/files/e3425586-809c-4904-a5df-0e6bd9ebdea6.jpg', rating: 5 },
-    { id: 4, name: 'Механическая клавиатура', price: 8990, category: 'Электроника', image: '/placeholder.svg', rating: 5 },
-    { id: 5, name: 'Беспроводная мышь', price: 2490, category: 'Электроника', image: '/placeholder.svg', rating: 4 },
-    { id: 6, name: 'Портативный аккумулятор', price: 1990, category: 'Аксессуары', image: '/placeholder.svg', rating: 4 },
+    { id: 1, name: 'Базовая футболка', price: 1490, category: 'Одежда', image: 'https://cdn.poehali.dev/projects/7a496644-9924-4fde-a35f-d4c474eaf0be/files/bbb30908-4d35-4cd0-b011-e500d95509b6.jpg', rating: 5 },
+    { id: 2, name: 'Джинсы Slim Fit', price: 3990, category: 'Одежда', image: 'https://cdn.poehali.dev/projects/7a496644-9924-4fde-a35f-d4c474eaf0be/files/783b0abe-7b73-4018-b264-58007f28d0b9.jpg', rating: 5 },
+    { id: 3, name: 'Худи с капюшоном', price: 2990, category: 'Одежда', image: 'https://cdn.poehali.dev/projects/7a496644-9924-4fde-a35f-d4c474eaf0be/files/efd10153-3bc4-4e77-aefd-90be499d9acb.jpg', rating: 4 },
+    { id: 4, name: 'Рубашка оверсайз', price: 2490, category: 'Одежда', image: '/placeholder.svg', rating: 5 },
+    { id: 5, name: 'Спортивные брюки', price: 2190, category: 'Одежда', image: '/placeholder.svg', rating: 4 },
+    { id: 6, name: 'Куртка-бомбер', price: 4990, category: 'Верхняя одежда', image: '/placeholder.svg', rating: 5 },
   ];
 
   const reviews: Review[] = [
-    { id: 1, name: 'Алексей М.', rating: 5, text: 'Отличный магазин! Быстрая доставка и качественные товары. Рекомендую всем!', date: '15 октября 2024' },
-    { id: 2, name: 'Мария К.', rating: 5, text: 'Заказывала наушники — пришли в идеальном состоянии. Цены приятно удивили.', date: '10 октября 2024' },
-    { id: 3, name: 'Дмитрий С.', rating: 4, text: 'Хороший выбор товаров, удобный сайт. Доставка заняла 3 дня.', date: '5 октября 2024' },
+    { id: 1, name: 'Анна В.', rating: 5, text: 'Обожаю этот магазин! Вещи отличного качества, сидят идеально. Буду заказывать ещё!', date: '15 октября 2024' },
+    { id: 2, name: 'Михаил К.', rating: 5, text: 'Заказал худи и футболки — всё пришло быстро, качество на высоте. Цены приятные!', date: '10 октября 2024' },
+    { id: 3, name: 'Екатерина Л.', rating: 4, text: 'Хороший выбор базовых вещей. Джинсы села как влитые, доставка 2 дня.', date: '5 октября 2024' },
   ];
 
   const addToCart = (id: number) => {
@@ -58,8 +58,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
-              <Icon name="ShoppingBag" size={28} className="text-primary" />
-              <span className="text-2xl font-bold text-foreground">ShopHub</span>
+              <Icon name="Shirt" size={28} className="text-primary" />
+              <span className="text-2xl font-bold text-foreground">CazualShop</span>
             </div>
             
             <nav className="hidden md:flex items-center gap-6">
@@ -94,11 +94,10 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl animate-fade-in">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Качественные товары для вашего комфорта
+                Стильная повседневная одежда для каждого
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Широкий выбор электроники и аксессуаров с доставкой по всей России. 
-                Гарантия качества и лучшие цены.
+                Качественный casual для вашего гардероба. Комфорт и стиль по доступным ценам с доставкой по всей России.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="text-base" onClick={() => scrollToSection('catalog')}>
@@ -116,9 +115,9 @@ const Index = () => {
         <section id="catalog" className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Популярные товары</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Популярные модели</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Топ продаж этого месяца — проверенные временем товары с отличными отзывами
+                Хиты сезона — самые любимые вещи наших покупателей
               </p>
             </div>
 
@@ -168,11 +167,11 @@ const Index = () => {
               <div className="animate-fade-in">
                 <h2 className="text-4xl font-bold mb-6">О нашем магазине</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  ShopHub — это современный интернет-магазин с многолетним опытом работы на рынке электроники и аксессуаров.
+                  CazualShop — современный магазин повседневной одежды, где комфорт встречается со стилем.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Мы тщательно отбираем товары от проверенных производителей, чтобы вы могли наслаждаться качеством каждой покупки. 
-                  Наша команда всегда готова помочь с выбором и ответить на любые вопросы.
+                  Мы отбираем качественные базовые вещи и трендовые модели, чтобы ваш гардероб был стильным и универсальным. 
+                  Наша команда следит за актуальными тенденциями и всегда готова помочь с выбором.
                 </p>
                 <div className="grid grid-cols-3 gap-6">
                   <div className="text-center">
@@ -184,8 +183,8 @@ const Index = () => {
                     <div className="text-sm text-muted-foreground">Довольных клиентов</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                    <div className="text-sm text-muted-foreground">Товаров в каталоге</div>
+                    <div className="text-3xl font-bold text-primary mb-2">200+</div>
+                    <div className="text-sm text-muted-foreground">Моделей одежды</div>
                   </div>
                 </div>
               </div>
@@ -211,7 +210,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Быстрая доставка</h3>
                   <p className="text-muted-foreground">
-                    Доставим ваш заказ в течение 1-3 дней по всей России. Бесплатная доставка при заказе от 3000 ₽.
+                    Доставим ваш заказ в течение 1-3 дней по всей России. Бесплатная доставка при заказе от 2500 ₽.
                   </p>
                 </CardContent>
               </Card>
@@ -223,7 +222,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Гарантия качества</h3>
                   <p className="text-muted-foreground">
-                    Все товары сертифицированы. Предоставляем официальную гарантию на всю продукцию.
+                    Работаем только с проверенными поставщиками. Обмен и возврат в течение 30 дней.
                   </p>
                 </CardContent>
               </Card>
@@ -268,14 +267,14 @@ const Index = () => {
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left">Сколько стоит доставка?</AccordionTrigger>
                 <AccordionContent>
-                  Стоимость доставки зависит от региона и составляет от 300 до 800 рублей. При заказе от 3000 рублей доставка бесплатная.
+                  Стоимость доставки зависит от региона и составляет от 300 до 800 рублей. При заказе от 2500 рублей доставка бесплатная.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-left">Можно ли вернуть товар?</AccordionTrigger>
                 <AccordionContent>
-                  Да, вы можете вернуть товар в течение 14 дней с момента получения, если он не был в употреблении и сохранена упаковка.
+                  Да, вы можете вернуть или обменять товар в течение 30 дней с момента получения, если он не был в употреблении и сохранены бирки.
                 </AccordionContent>
               </AccordionItem>
 
@@ -304,9 +303,9 @@ const Index = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <Badge variant="outline" className="mb-3">Новости</Badge>
-                  <h3 className="text-xl font-semibold mb-2">Топ-10 наушников 2024 года</h3>
-                  <p className="text-muted-foreground mb-4">Разбираем лучшие модели беспроводных наушников этого года по соотношению цена-качество...</p>
+                  <Badge variant="outline" className="mb-3">Тренды</Badge>
+                  <h3 className="text-xl font-semibold mb-2">Базовый гардероб 2024</h3>
+                  <p className="text-muted-foreground mb-4">Разбираем must-have вещи для создания стильных повседневных образов...</p>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Icon name="Calendar" size={16} className="mr-2" />
                     20 октября 2024
@@ -322,8 +321,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="p-6">
                   <Badge variant="outline" className="mb-3">Гайды</Badge>
-                  <h3 className="text-xl font-semibold mb-2">Как выбрать умные часы</h3>
-                  <p className="text-muted-foreground mb-4">Подробное руководство по выбору смарт-часов: на что обратить внимание при покупке...</p>
+                  <h3 className="text-xl font-semibold mb-2">Как выбрать идеальные джинсы</h3>
+                  <p className="text-muted-foreground mb-4">Полное руководство по выбору джинсов: типы кроя, посадка, длина и уход за денимом...</p>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Icon name="Calendar" size={16} className="mr-2" />
                     15 октября 2024
@@ -338,9 +337,9 @@ const Index = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <Badge variant="outline" className="mb-3">Обзоры</Badge>
-                  <h3 className="text-xl font-semibold mb-2">Механические клавиатуры для геймеров</h3>
-                  <p className="text-muted-foreground mb-4">Сравниваем популярные игровые клавиатуры: переключатели, подсветка, функционал...</p>
+                  <Badge variant="outline" className="mb-3">Стиль</Badge>
+                  <h3 className="text-xl font-semibold mb-2">Оверсайз: как носить правильно</h3>
+                  <p className="text-muted-foreground mb-4">Гид по оверсайз-стилю: как создать модный образ и не выглядеть мешковато...</p>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Icon name="Calendar" size={16} className="mr-2" />
                     10 октября 2024
@@ -391,21 +390,21 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Icon name="ShoppingBag" size={28} className="text-primary" />
-                <span className="text-xl font-bold">ShopHub</span>
+                <Icon name="Shirt" size={28} className="text-primary" />
+                <span className="text-xl font-bold">CazualShop</span>
               </div>
               <p className="text-sm text-secondary-foreground/80">
-                Качественные товары для вашего комфорта с доставкой по всей России
+                Стильная повседневная одежда с доставкой по всей России
               </p>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Каталог</h4>
               <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><a href="#" className="hover:text-primary transition-colors">Электроника</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Аксессуары</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Одежда</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Верхняя одежда</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Новинки</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Акции</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Распродажа</a></li>
               </ul>
             </div>
 
@@ -428,7 +427,7 @@ const Index = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Icon name="Mail" size={16} />
-                  <span>info@shophub.ru</span>
+                  <span>info@cazualshop.ru</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Icon name="MapPin" size={16} />
@@ -441,7 +440,7 @@ const Index = () => {
           <Separator className="my-8 bg-secondary-foreground/20" />
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-secondary-foreground/80">
-            <div>© 2024 ShopHub. Все права защищены.</div>
+            <div>© 2024 CazualShop. Все права защищены.</div>
             <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
               <a href="#" className="hover:text-primary transition-colors">Условия использования</a>
